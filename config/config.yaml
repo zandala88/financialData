@@ -1,0 +1,21 @@
+mysql:
+  host: "110.41.11.12"
+  user: "root"
+  password: "saitoasuka980810"
+  database: "financial"
+  port: 3306
+
+loggers:
+  handlers:
+    - sink: "logs/app.log"
+      format: "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+      level: "DEBUG"
+      rotation: "10 MB"
+      retention: "7 days"
+      compression: "zip"
+    - sink: "sys.stdout"
+      format: "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+      level: "INFO"
+      rotation: None
+      retention: None
+      compression: None
