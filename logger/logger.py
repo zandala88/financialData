@@ -1,8 +1,9 @@
 import yaml
 from loguru import logger
 import sys
+import os
 
-def setup_logger(config_path="config/config.yaml"):
+def setup_logger(config_path="./config/config.yaml"):
     # 加载 YAML 配置
     with open(config_path, "r", encoding="utf-8") as f:
         config = yaml.safe_load(f)
